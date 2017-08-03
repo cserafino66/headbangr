@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
-  resources :concerts
-  root "concerts#index"
+  devise_for :users
+  root "static_pages#index"
+
+  resources :concerts, only: [:index, :show] do
+    resources :comments
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :concerts
+    end
+  end
 end

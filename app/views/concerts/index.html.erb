@@ -1,1 +1,7 @@
 <h1>Concerts</h1>
+
+<ul>
+  <% @concerts.each do |concert| %>
+    <li><%= concert.artist %> - <%= link_to 'Concert Comments', concert_path %></li>
+  <% end %>
+</ul>

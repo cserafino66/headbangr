@@ -17,11 +17,8 @@ ActiveRecord::Schema.define(version: 20170801152221) do
 
   create_table "concerts", force: :cascade do |t|
     t.string "artist", null: false
-    t.string "venue", null: false
     t.string "location", null: false
     t.datetime "start_date", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
