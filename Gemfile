@@ -1,5 +1,7 @@
 source 'https://rubygems.org/'
 
+gem 'devise'
+gem 'httparty'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -11,6 +13,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 
 group :development, :test do
   gem 'capybara'
