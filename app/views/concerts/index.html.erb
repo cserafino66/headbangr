@@ -2,6 +2,6 @@
 
 <ul>
   <% @concerts.each do |concert| %>
-    <li><%= concert.artist %> - <%= link_to 'Concert Comments', concert_path %></li>
+    <li><%= concert.artist %> - <%= concert.location %> <%= concert.start_date %> </li>
   <% end %>
 </ul>
