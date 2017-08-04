@@ -7,7 +7,6 @@ class Jambase
   end
 
   def self.get_events(zip_code)
-    zip_code.to_s
     url = "#{base_url}?zipCode=#{zip_code}&api_key=#{TOKEN}"
     puts url
     HTTParty.get(url, {format: :json})
