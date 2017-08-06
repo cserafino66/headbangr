@@ -10,16 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803183649) do
+ActiveRecord::Schema.define(version: 20170806193435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.string "text", null: false
+    t.integer "jambase_id", null: false
+    t.bigint "concert_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concert_id"], name: "index_comments_on_concert_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "concerts", force: :cascade do |t|
     t.string "artist", null: false
-    t.string "location", null: false
+    t.string "venue", null: false
     t.datetime "start_date", null: false
+    t.integer "jambase_id", null: false
     t.string "ticket_url"
+  end
+
+  create_table "myconcerts", force: :cascade do |t|
+    t.integer "jambase_id", null: false
+    t.string "artist", null: false
+    t.string "venue", null: false
+    t.datetime "start_date", null: false
+    t.string "ticket_url", null: false
+    t.bigint "user_id"
+    t.bigint "concert_id"
+    t.index ["concert_id"], name: "index_myconcerts_on_concert_id"
+    t.index ["user_id"], name: "index_myconcerts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
