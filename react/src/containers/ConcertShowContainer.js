@@ -49,8 +49,8 @@ class ConcertShowContainer extends Component {
           </div>
           <div className="columns small-8">
             <h1>{this.state.concert.artist}</h1>
-            <h5>{this.state.concert.start_date}, {this.state.concert.venue}</h5>
-            <p>{this.state.concert.ticket_url}</p>
+            <h5>{this.state.concert.start_date} - {this.state.concert.venue}</h5>
+            <a>{this.state.concert.ticket_url}</a>
           </div>
         </div>
 
