@@ -1,7 +1,7 @@
 class Api::V1::ConcertsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
-  def index
+  def index;
     render json: Concert.all, adapter: :json
   end
 
