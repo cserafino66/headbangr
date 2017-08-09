@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router';
 import CommentTile from '../components/CommentTile';
+import BackButton from '../components/BackButton';
 
 class ConcertShowContainer extends Component {
   constructor(props) {
@@ -49,9 +50,10 @@ class ConcertShowContainer extends Component {
           </div>
           <div className="columns small-8">
             <h1>{this.state.concert.artist}</h1>
-            <h5>{this.state.concert.start_date} - {this.state.concert.venue}</h5>
-            <a>{this.state.concert.ticket_url}</a>
+            <h5>{this.state.concert.start_date} - {this.state.concert.venue}<a href={this.state.concert.ticket_url}> - Buy a Ticket!</a></h5>
+
           </div>
+
         </div>
 
         <h3>Comments</h3>

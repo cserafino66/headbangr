@@ -1,0 +1,102 @@
+
+.index-image {
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+}
+
+.show-image {
+  width: 80%;
+  height: auto;
+}
+
+.signs {
+ float: right;
+}
+
+.crop img {
+    width: 50px;
+    height: 50px;
+}
+
+.crop {
+ text-align: right;
+}
+
+.name span {
+ display: table-cell;
+ vertical-align: middle;
+}
+
+.sign span {
+ float: right;
+}
+
+.profile-photo {
+  width: 45px;
+  height: 45px;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+
+
+#error_explanation {
+  color: red;
+}
+
+.backbutton {
+  margin: 30px 0 50px 0;
+}
+
+button.button.green {
+  background-color: green;
+}
+
+button.button.red {
+  background-color: red;
+}
+
+body {
+  background-image: url("http://www.wmzqfest2016.com/static2/background1");
+  background-repeat: repeat-y;
+  /*background-size: cover;*/
+}
+
+.header {
+  background-color: black;
+  opacity: 0.75;
+  margin-bottom: 50px;
+}
+
+ul.menu {
+  background-color: #333333;
+}
+
+.menu .menu-text {
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.callout {
+  background-color: black;
+  opacity: 0.50;
+}
+
+h5, p {
+  font-family: 'Kite One', serif;
+  color: white;
+}
+
+h3, h1 {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 500;
+  color: white;
+}

@@ -1,5 +1,7 @@
 source 'https://rubygems.org/'
 
+gem 'foundation-rails'
+gem 'active_model_serializers'
 gem 'devise'
 gem 'httparty'
 gem 'rails', '~> 5.1.2'

@@ -11,7 +11,6 @@ const ConcertTile = (props) => {
             <div className='small-8 columns'>
               <h3>{props.artist}</h3>
               <h5>{props.venue}, {props.start_date}</h5>
-              <h6>{props.ticket_url}</h6>
             </div>
           </div>
         </div>

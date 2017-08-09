@@ -7,4 +7,8 @@ class Concert < ApplicationRecord
   validates :venue, presence: true
   validates :start_date, presence: true
   validates :jambase_id, presence: true, numericality: true
+
+  # def self.search(search)
+  #   where("zip_code ILIKE ?", "%#{search}%")
+  # end
 end

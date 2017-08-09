@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.concert = @concert
     @comment.user = current_user
+    # binding.pry
 
     if @comment.save
       redirect_to @concert, notice: 'New comment was successfully created.'

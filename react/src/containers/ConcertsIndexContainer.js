@@ -27,32 +27,31 @@ class ConcertsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      debugger;
       this.setState({ concerts: body })
     })
   }
 
   componentDidMount() {
-    debugger;
     this.saveConcertsToDatabase();
   }
 
 
 
   render() {
-    debugger;
     let events = this.state.concerts.map(concert => {
       return(
-        <div>
-        <ConcertTile
-          key={concert.id}
-          id={concert.id}
-          jambase_id={concert.jambase_id}
-          artist={concert.artist}
-          venue={concert.venue}
-          start_date={concert.start_date}
-          ticket_url={concert.ticket_url}
-        />
+        <div className="columns small-12">
+          <div className="columns small-8">
+          <ConcertTile
+            key={concert.id}
+            id={concert.id}
+            jambase_id={concert.jambase_id}
+            artist={concert.artist}
+            venue={concert.venue}
+            start_date={concert.start_date}
+            ticket_url={concert.ticket_url}
+          />
+        </div>
       </div>
       )
     })

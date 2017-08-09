@@ -1,9 +1,9 @@
 class Api::V1::ConcertsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
-  def index;
+  def index
     # concerts = Jambase.get_events("02135")
-    # render json: Concert.all, adapter: :json
+    render json: Concert.all, adapter: :json
   end
 
   def create

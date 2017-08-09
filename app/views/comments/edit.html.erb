@@ -1,0 +1,17 @@
+<h3>Edit Comment for <%= @concert.artist %> on <%= @concert.start_date%></h3>
+<%= link_to "Back to Concert Page", concert_path(@concert) %>
+
+<%= form_for [@concert, @comment], :url => edit_concert_comment_path(@concert, @comment) do |f| %>
+
+  <%= f.label :text, "Comment Text" %>
+  <%= f.text_field :text %>
+  <br /><br />
+
+  <%= f.submit "Update Comment" %>
+
+
+  <% if current_user.id == @comment.user_id %>
+    <%= button_to "Delete", [@concert, @comment], method: :delete,
+    data: {confirm: "You Sure?"} %>
+  <% end %>
+<% end %>
