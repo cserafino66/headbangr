@@ -7,19 +7,11 @@ class Api::V1::ConcertsController < ApplicationController
   end
 
   def create
-    # data = request.body.read
-    # jsonData = JSON.parse(data)
-    # zip_code = jsonData["concerts"]["zip_code"]
-    # concert_objects = Jambase.get_events(zip_code)
+    data = JSON.parse(request.body.read)
+    zip_code = data["zipCode"]
+    concert_objects = Jambase.get_events(zip_code)
 
-    # render json: concert_objects, adapter: :json
-    render json: Concert.all, adapter: :json
-
-    # - Reach out to jambase
-    # - get concert data (formatted)
-    # - create individual ruby objects out of json
-    # - send ruby objects to react
-
+    render json: concert_objects, adapter: :json
   end
 
   def show

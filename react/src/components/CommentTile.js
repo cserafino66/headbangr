@@ -13,7 +13,6 @@ class CommentTile extends Component {
       <div className="callout" id={this.props.id}>
         <div className="row">
           <div className="columns small-8">
-            <h5>Commenter: {this.props.first_name} {this.props.last_name}</h5>
             <h5>{this.props.text}</h5>
           </div>
           <div className="columns small-4">

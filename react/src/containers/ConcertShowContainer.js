@@ -43,12 +43,10 @@ class ConcertShowContainer extends Component {
     })
 
     return (
+
       <div>
-        <div className="row concert-description">
-          <div className="columns small-4">
-            <img className='show-image' src={this.state.concert.img_url} alt={this.state.concert.artist}></img>
-          </div>
-          <div className="columns small-8">
+        <div>
+          <div class="callout columns small-8">
             <h1>{this.state.concert.artist}</h1>
             <h5>{this.state.concert.start_date} - {this.state.concert.venue}<a href={this.state.concert.ticket_url}> - Buy a Ticket!</a></h5>
 
@@ -58,7 +56,7 @@ class ConcertShowContainer extends Component {
 
         <h3>Comments</h3>
         {comments}
-        <a className="button" href={`/concerts/${this.props.params.id}/comments/new`}>Add New Comment</a>
+        <a class="button" href={`/concerts/${this.props.params.id}/comments/new`}>Add New Comment</a>
       </div>
     )
   }

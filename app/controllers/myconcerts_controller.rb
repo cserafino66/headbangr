@@ -1,7 +1,6 @@
-class MyConcertsController < ApplicationController
+class MyconcertsController < ApplicationController
   def index
-    @concerts = Concert.all
-    @my_concerts = Concert.where(user_id: current_user.id)
+
   end
 
   def destroy
@@ -12,14 +11,12 @@ class MyConcertsController < ApplicationController
 
   end
 
-
-
-
   def new
 
   end
 
   def create
+
 
   end
 

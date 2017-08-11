@@ -3,7 +3,6 @@ class Api::V1::CommentsController < ApplicationController
 
   def index
     @concert = Concert.find(params[:concert_id])
-    # binding.pry
     @comment = @concert.comments
     render json: @comments, adapter: :json
   end

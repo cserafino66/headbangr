@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#index"
 
-  resources :concerts, only: [:index, :show] do
+  resources :concerts, only: [:create, :index, :show] do
     resources :comments
   end
 

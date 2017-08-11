@@ -7,11 +7,9 @@ const App = props => {
 
   return (
     <Router history={browserHistory}>
-      <div>
-        <Route path='/' component={ConcertsIndexContainer}/>
-        <Route path='/concerts' component={ConcertsIndexContainer}/>
-        <Route path='/concerts/:id' component={ConcertShowContainer}/>
-      </div>
+      <Route path='/' component={ConcertsIndexContainer}/>
+      <Route path='/concerts' component={ConcertsIndexContainer}/>
+      <Route path='/concerts/:id' component={ConcertShowContainer}/>
     </Router>
   )
 }

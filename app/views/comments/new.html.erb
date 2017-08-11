@@ -1,5 +1,5 @@
 <h1>New Comment</h1>
-<div class='callout'>
+<div class='columns small-8 callout'>
 <%= form_for([@concert, @comment], html: { class: 'form'}) do |f| %>
 
   <% if @comment.errors.any? %>
@@ -14,12 +14,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="columns small-8">
     <%= f.label :text %>
     <%= f.text_field :text %>
   </div>
 
-  <div class="actions">
+  <div class="columns small-4">
     <%= f.submit %>
   </div>
 <% end %>

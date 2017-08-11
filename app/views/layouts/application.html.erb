@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html.bg lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,24 +12,22 @@
   </head>
 
   <body>
-      <span>
-        <div className="columns small-4">
-          <ul>
-            <% if user_signed_in? %>
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-              <h6>You are signed in as <%= current_user.first_name %> <%= current_user.last_name %></h6>
-            <% else %>
-              <%= link_to 'Sign In', new_user_session_path %>
-              <%= link_to 'Sign Up', new_user_registration_path %>
-            <% end %>
-          </ul>
-        </div>
-        <p class="notice"> <%= notice %></p>
-        <p class="alert"> <%= alert %></p>
-      </span>
+    <div id="header" class="columns small-3">
+      <div class="align-left">
+        <% if user_signed_in? %>
+        <h6>Signed in as <%= current_user.first_name %> <%= current_user.last_name %></h6>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign In', new_user_session_path %>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+        <% end %>
+        <p class="notice"> <%= notice %><%= alert %></p>
+      </div>
+    </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+
   </body>
 </html>
 

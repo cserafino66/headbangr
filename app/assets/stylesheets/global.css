@@ -1,49 +1,18 @@
-
-.index-image {
-  width: 100%;
-  height: auto;
-  padding-top: 10px;
-}
-
-.show-image {
-  width: 80%;
-  height: auto;
-}
-
-.signs {
- float: right;
-}
-
-.crop img {
-    width: 50px;
-    height: 50px;
-}
-
-.crop {
- text-align: right;
-}
-
-.name span {
- display: table-cell;
- vertical-align: middle;
-}
-
-.sign span {
- float: right;
-}
-
-.profile-photo {
-  width: 45px;
-  height: 45px;
+.align-left {
+ text-align: left;
 }
 
 .logo {
-  height: 200px;
-  width: 200px;
+  width: 60px;
+  height: 60px;
   display: block;
   margin: auto;
+  border-radius: 10px;
 }
 
+.notice {
+  color: red;
+}
 
 #error_explanation {
   color: red;
@@ -53,33 +22,46 @@
   margin: 30px 0 50px 0;
 }
 
-button.button.green {
-  background-color: green;
+button {
+  background-color: black;
+  color: white;
 }
 
-button.button.red {
-  background-color: red;
-}
 
 body {
   background-image: url("http://www.wmzqfest2016.com/static2/background1");
   background-repeat: repeat-y;
-  /*background-size: cover;*/
+  background-size: cover;
+  background-position: center;
+  height: 100%;
 }
 
-.header {
+
+#header {
+
+
+}
+
+ul.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li.links {
+  float: right;
+}
+
+li.header {
+  float: left;
+}
+
+/*li a {
+  display: block;
+  padding: 8px;
   background-color: black;
-  opacity: 0.75;
-  margin-bottom: 50px;
-}
-
-ul.menu {
-  background-color: #333333;
-}
-
-.menu .menu-text {
-  color: white;
-}
+}*/
 
 a {
   color: white;
@@ -87,7 +69,7 @@ a {
 
 .callout {
   background-color: black;
-  opacity: 0.50;
+  opacity: 0.75;
 }
 
 h5, p {
@@ -95,7 +77,7 @@ h5, p {
   color: white;
 }
 
-h3, h1 {
+h6, h3, h1 {
   font-family: 'Alegreya Sans', sans-serif;
   font-weight: 500;
   color: white;
