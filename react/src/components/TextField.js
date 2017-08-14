@@ -3,7 +3,7 @@ import React from 'react';
 const TextField = (props) => {
   return (
     <label onChange={props.handleChange}>{props.label}
-      <textarea
+      <input
         name={props.name}
         type='text'
         value={props.content}

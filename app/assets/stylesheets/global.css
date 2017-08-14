@@ -1,5 +1,5 @@
-.align-left {
- text-align: left;
+.align-right {
+ text-align: right;
 }
 
 .logo {
@@ -8,6 +8,16 @@
   display: block;
   margin: auto;
   border-radius: 10px;
+}
+
+.container {
+  width: 50%;
+  background-color: black;
+  opacity: .75;
+}
+
+.btn {
+  margin-left: 50px;
 }
 
 .notice {
@@ -20,6 +30,10 @@
 
 .backbutton {
   margin: 30px 0 50px 0;
+}
+
+label {
+  color: white;
 }
 
 button {
@@ -36,17 +50,21 @@ body {
   height: 100%;
 }
 
-
-#header {
-
-
+.navbar {
+  background-color: transparent;
 }
 
-ul.header {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.navbar-right {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.navbar-inverse {
+  background-color: transparent;
+  border-color: transparent;
+}
+#header {
+  background-color: black;
+
 }
 
 li.links {
@@ -57,11 +75,22 @@ li.header {
   float: left;
 }
 
-/*li a {
+.nav {
+  color: white;
+}
+
+li a {
   display: block;
   padding: 8px;
   background-color: black;
-}*/
+}
+
+#signed{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
 a {
   color: white;
@@ -72,12 +101,8 @@ a {
   opacity: 0.75;
 }
 
-h5, p {
-  font-family: 'Kite One', serif;
-  color: white;
-}
 
-h6, h3, h1 {
+p, h6, h5, h4, h3, h2, h1 {
   font-family: 'Alegreya Sans', sans-serif;
   font-weight: 500;
   color: white;

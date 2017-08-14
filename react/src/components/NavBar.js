@@ -5,23 +5,19 @@ import TextField from './TextField';
 
 const NavBar = props => {
   return(
-    <div>
-      <Link className='columns small-3' to='/'>
-      <h2>Headbangr</h2>
-      </Link>
-      <BackButton className='columns small-3'/>
-      <form className='columns small-3' onSubmit={props.handleSubmit}>
-        <TextField
-          content={props.zipCode}
-          label="Search for Concerts"
-          name="search-field"
-          handleChange={props.handleChange}
-        />
-        <div className="button-group">
-          <input className="button" type="submit" value="Submit" />
+        <div id="concert_search" className="container-fluid">
+          <form className="navbar-form navbar-left" onSubmit={props.handleSubmit}>
+            <div className="form-group">
+              <TextField
+              content={props.zipCode}
+              label="Enter a Zip Code"
+              name="search-field"
+              handleChange={props.handleChange}
+            />
+            </div>
+            <button type="submit" className="btn btn-default">Submit</button>
+          </form>
         </div>
-      </form>
-    </div>
   )
 }
 

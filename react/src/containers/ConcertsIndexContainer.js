@@ -12,7 +12,7 @@ class ConcertsIndexContainer extends Component {
       zipCode: ''
     }
 
-    this.saveConcertsToDatabase = this.saveConcertsToDatabase.bind(this)
+    // this.saveConcertsToDatabase = this.saveConcertsToDatabase.bind(this)
     this.addToMyconcertsButton = this.addToMyconcertsButton.bind(this)
 
     this.handleChange = this.handleChange.bind(this)
@@ -24,24 +24,6 @@ class ConcertsIndexContainer extends Component {
     this.setState({ myConcerts: [...this.state.myConcerts, payload] })
   }
 
-  handleChange(event) {
-    this.setState({ zipCode: event.target.value })
-  }
-
-  searchFunction(formPayload) {
-    let data = JSON.stringify(formPayload)
-    fetch('/api/v1/concerts', {
-      method: 'post',
-      body: data
-    })
-    .then(response => response.json())
-    .then(body => {this.setState({
-      concerts: body
-    })
-
-    })
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     let data = {
@@ -50,28 +32,42 @@ class ConcertsIndexContainer extends Component {
     this.searchFunction(data);
   }
 
-
-  saveConcertsToDatabase() {
-    // let concert_objects = Jambase.get_events(zipCode)
-    let data = {
-      concerts: {
-        zipCode: "02135"
-      }
-    }
-    let jsonStringData = JSON.stringify(data)
-
-    fetch('/api/v1/concerts', {
-      method: 'post',
-      body: jsonStringData
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ concerts: body })
-    })
+  handleChange(event) {
+    this.setState({ zipCode: event.target.value })
   }
 
+
+  searchFunction(formPayload) {
+    let data = JSON.stringify(formPayload)
+    fetch('/api/v1/concerts', {
+      method: 'post',
+      body: data
+    })
+    .then(response => response.json())
+    .then(body => { this.setState({ concerts: body }) })
+  }
+
+  // saveConcertsToDatabase() {
+  //   // let concert_objects = Jambase.get_events(zipCode)
+  //   let data = {
+  //     concerts: {
+  //       zipCode: "02135"
+  //     }
+  //   }
+  //   let jsonStringData = JSON.stringify(data)
+  //
+  //   fetch('/api/v1/concerts', {
+  //     method: 'post',
+  //     body: jsonStringData
+  //   })
+  //   .then(response => response.json())
+  //   .then(body => {
+  //     this.setState({ concerts: body })
+  //   })
+  // }
+
   componentDidMount() {
-    this.saveConcertsToDatabase();
+    // this.searchFunction();
   }
 
 

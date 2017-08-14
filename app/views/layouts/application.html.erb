@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Headbangr </title>
     <%= csrf_meta_tags %>
 
@@ -12,21 +18,31 @@
   </head>
 
   <body>
-    <div id="header" class="columns small-3">
-      <div class="align-left">
+    <div id="header" class="container-fluid">
+
+      <div class="navbar-left">
+        <h2>Headbangr</h2>
+      </div>
+
+      <div class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <h6>Signed in as <%= current_user.first_name %> <%= current_user.last_name %></h6>
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <a href="#">My Concerts</a>   /
+        Signed in as <%= current_user.first_name %> <%= current_user.last_name %>   /
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to 'Sign In', new_user_session_path %>
+          <%= link_to 'Sign In', new_user_session_path %>   /
           <%= link_to 'Sign Up', new_user_registration_path %>
         <% end %>
         <p class="notice"> <%= notice %><%= alert %></p>
       </div>
-    </div>
 
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    </div>
+    &nbsp;
+    <div class="container">
+      <%= yield %>
+      <%= javascript_include_tag "application" %>
+
+    </div>
 
   </body>
 </html>
