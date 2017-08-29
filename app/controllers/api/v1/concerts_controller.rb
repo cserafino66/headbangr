@@ -10,7 +10,6 @@ class Api::V1::ConcertsController < ApplicationController
     data = JSON.parse(request.body.read)
     zip_code = data["zipCode"]
     concert_objects = Jambase.get_events(zip_code)
-
     render json: concert_objects, adapter: :json
   end
 

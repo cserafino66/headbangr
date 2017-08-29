@@ -11,7 +11,7 @@
 }
 
 .container {
-  width: 50%;
+  width: 75%;
   background-color: black;
   opacity: .75;
 }
@@ -37,6 +37,11 @@ label {
 }
 
 button {
+  background-color: black;
+  color: white;
+}
+
+a.button {
   background-color: black;
   color: white;
 }

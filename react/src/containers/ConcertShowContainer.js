@@ -46,7 +46,7 @@ class ConcertShowContainer extends Component {
 
       <div>
         <div>
-          <div class="callout columns small-8">
+          <div>
             <h1>{this.state.concert.artist}</h1>
             <h5>{this.state.concert.start_date} - {this.state.concert.venue}<a href={this.state.concert.ticket_url}> - Buy a Ticket!</a></h5>
 
@@ -56,7 +56,7 @@ class ConcertShowContainer extends Component {
 
         <h3>Comments</h3>
         {comments}
-        <a class="button" href={`/concerts/${this.props.params.id}/comments/new`}>Add New Comment</a>
+        <a className="button" href={`/concerts/${this.props.params.id}/comments/new`}>Add New Comment</a>
       </div>
     )
   }

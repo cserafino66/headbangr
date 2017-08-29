@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ConcertTile from '../components/ConcertTile';
-import { data } from '../../exampleData';
 import NavBar from '../components/NavBar';
 
 class ConcertsIndexContainer extends Component {
@@ -67,7 +66,7 @@ class ConcertsIndexContainer extends Component {
   // }
 
   componentDidMount() {
-    // this.searchFunction();
+    this.searchFunction();
   }
 
 
@@ -75,8 +74,7 @@ class ConcertsIndexContainer extends Component {
   render() {
     let events = this.state.concerts.map(concert => {
       return(
-        <div className="columns small-12">
-          <div className="columns small-12">
+        <div>
           <ConcertTile
             key={concert.id}
             id={concert.id}
@@ -87,7 +85,6 @@ class ConcertsIndexContainer extends Component {
             ticket_url={concert.ticket_url}
             addToMyconcertsButton={this.addToMyconcertsButton}
           />
-        </div>
       </div>
       )
     })

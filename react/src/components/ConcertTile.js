@@ -13,6 +13,7 @@ const ConcertTile = (props) => {
 
     props.addToMyconcertsButton(payload);
   }
+
   return(
     <div>
       <Link className='columns small-8' to={`/concerts/${props.id}`}>
