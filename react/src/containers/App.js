@@ -11,7 +11,7 @@ const App = props => {
       <Route path='/' component={ConcertsIndexContainer}/>
       <Route path='/concerts' component={ConcertsIndexContainer}/>
       <Route path='/concerts/:id' component={ConcertShowContainer}/>
-      <Route path='/myconcerts/:user_id' component={MyConcertsIndexContainer}/>
+      <Route path='/myconcerts' component={MyConcertsIndexContainer}/>
     </Router>
   )
 }

@@ -1,27 +1,52 @@
-import React, { Component } from 'React';
-import ConcertTile from './components/ConcertTile';
-import BackButton from './components/BackButton';
+import React, { Component } from 'react';
+import ConcertTile from '../components/ConcertTile';
+import BackButton from '../components/BackButton';
 
 
 class MyConcertsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      myConcerts: [];
+      myConcerts: []
     }
     this.deleteFromMyconcertsButton = this.deleteFromMyconcertsButton.bind(this)
   }
 
-  deleteFromMyconcertsButton() {
-
-    // DELETE call, instead of POST/GET
-
+  deleteFromMyconcertsButton(userId) {
+    let myConcertsArray = [];
+    fetch(`/api/v1/myconcerts/${userId}`, {
+      credentials: 'same-origin',
+      method: 'delete'
+    })
+    .then(response => response.json())
+    .then(body => {
+      body.forEach(event => {
+        myConcertsArray.push(event)
+      })
+      this.setState({ myConcerts: myConcertsArray })
+    })
   }
 
-
+  componentDidMount() {
+    let myConcertsArray = [];
+    fetch(`/api/v1/myconcerts/${userId}`, {
+      credentials: 'same-origin'
+    })
+    .then(response => response.json())
+    .then(body => {
+      body.forEach(event => {
+        myConcertsArray.push(event)
+      })
+      this.setState({ myConcerts: myConcertsArray })
+    })
+  }
 
   render() {
     let events = this.state.myConcerts.map(concert => {
+      let handleClick = () => {
+        this.deleteFromMyconcertsButton(concert.id)
+      }
+
       return(
         <div>
           <ConcertTile
@@ -31,7 +56,7 @@ class MyConcertsIndexContainer extends Component {
             venue={concert.venue}
             start_date={concert.start_date}
             ticket_url={concert.ticket_url}
-            deleteFromMyconcertsButton={this.deleteFromMyconcertsButton}
+            handleClick={handleClick}
           />
         </div>
       )
@@ -40,9 +65,6 @@ class MyConcertsIndexContainer extends Component {
     return (
       <div>
         <BackButton />
-      </div>
-
-      <div>
         {events}
       </div>
     )

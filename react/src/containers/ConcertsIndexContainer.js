@@ -37,13 +37,14 @@ class ConcertsIndexContainer extends Component {
 
 
   searchFunction(formPayload) {
-    let data = JSON.stringify(formPayload)
     fetch('/api/v1/concerts', {
       method: 'post',
-      body: data
+      body: JSON.stringify(formPayload)
     })
     .then(response => response.json())
-    .then(body => { this.setState({ concerts: body }) })
+    .then(body => {
+      this.setState({ concerts: body })
+    })
   }
 
   // saveConcertsToDatabase() {

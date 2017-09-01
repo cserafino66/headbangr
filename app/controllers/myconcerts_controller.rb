@@ -1,25 +1,7 @@
-class MyconcertsController < ApplicationController
+class MyconcertsController < ApplicationRecord
   def index
-
+    render template: 'static_pages/index'
   end
 
-  def destroy
-
-  end
-
-  def show
-
-  end
-
-  def new
-
-  end
-
-  def create
-
-
-  end
 
 end
-
-private
