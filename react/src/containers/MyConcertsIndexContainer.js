@@ -29,7 +29,7 @@ class MyConcertsIndexContainer extends Component {
 
   componentDidMount() {
     let myConcertsArray = [];
-    fetch(`/api/v1/myconcerts/${userId}`, {
+    fetch(`/api/v1/myconcerts`, {
       credentials: 'same-origin'
     })
     .then(response => response.json())
