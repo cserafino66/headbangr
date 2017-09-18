@@ -20,6 +20,19 @@ class ConcertsIndexContainer extends Component {
   }
 
   addToMyconcertsButton(payload) {
+    // payload needs to be id of concertTile that was clicked, going to be a fetch, with a post, to the api/v1/myconcerts, same origin credentials. see below, when setting state of myConcerts, it will need to have the ellipses in order to add on to the array.
+
+    // fetch('/api/v1/myconcerts', {
+    //   credentials: 'same-origin',
+    //   method: 'post',
+    //   body: JSON.stringify(payload)
+    // })
+    // .then(response => response.json())
+    // .then(responseData => {
+    //   this.setState({ myConcerts: responseData.body })
+    // })
+    // .catch(console.log('error'))
+
     this.setState({ myConcerts: [...this.state.myConcerts, payload] })
   }
 
@@ -46,25 +59,6 @@ class ConcertsIndexContainer extends Component {
       this.setState({ concerts: body })
     })
   }
-
-  // saveConcertsToDatabase() {
-  //   // let concert_objects = Jambase.get_events(zipCode)
-  //   let data = {
-  //     concerts: {
-  //       zipCode: "02135"
-  //     }
-  //   }
-  //   let jsonStringData = JSON.stringify(data)
-  //
-  //   fetch('/api/v1/concerts', {
-  //     method: 'post',
-  //     body: jsonStringData
-  //   })
-  //   .then(response => response.json())
-  //   .then(body => {
-  //     this.setState({ concerts: body })
-  //   })
-  // }
 
   componentDidMount() {
     this.searchFunction();

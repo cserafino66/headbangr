@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is currently a work in progress. Feel free to get in touch with suggestions or comments. Thank you!
 
-Things you may want to cover:
 
-* Ruby version
+* Technologies
 
-* System dependencies
+  Backend: Rails 5.1.2
+  Frontend: React.js and Embedded Ruby
+  User Auth: Devise
+  Styling: Bootstrap/CSS
+  Database: Postgres
+  Testing: RSpec, Capybara, Jasmine, Karma, Enzyme
 
-* Configuration
+* To run this app on your local machine
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Install Ruby.2.3.3
+  In a terminal, run `git clone https://github.com/cserafino66/headbangr.git`
+  Navigate to the project's root directory with `cd headbangr`
+  Run `bundle install && npm install && rake db:setup`
+  In terminal, run `rails s`
+  In another terminal window, run `npm start`
+  Visit http://localhost:3000/ in your browser.
