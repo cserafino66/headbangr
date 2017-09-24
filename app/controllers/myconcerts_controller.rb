@@ -1,4 +1,4 @@
-class MyconcertsController < ApplicationRecord
+class MyconcertsController < ApplicationController
   def index
     render template: 'static_pages/index'
   end
