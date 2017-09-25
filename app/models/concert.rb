@@ -8,7 +8,4 @@ class Concert < ApplicationRecord
   validates :start_date, presence: true
   validates :jambase_id, presence: true, numericality: true
 
-  def zip_search
-
-  end
 end
